@@ -93,5 +93,17 @@ class UserRegistrationTest {
         boolean result = userRegistration.password3("mutallib");
         Assertions.assertEquals(false, result);
     }
+    //UC8 - Rule4: should have exactly 1 special character
+    @Test
+    public void givenPasswordRule4_WhenValid_ShouldReturnTrue() {
+        boolean result = userRegistration.password4("smutallib@97");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordRule4_WhenInvalid_ShouldReturnFalse() {
+        boolean result = userRegistration.password3("mu97");
+        Assertions.assertEquals(false, result);
+    }
 
 }
