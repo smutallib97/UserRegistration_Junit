@@ -11,4 +11,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(firstName);
         return matcher.matches();
     }
+    //UC2 - Enter Valid User Last Name
+    public boolean lastName(String lastName) {
+        String regex = "^[A-Z]{1}[a-z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(lastName);
+        return matcher.matches();
+    }
 }
