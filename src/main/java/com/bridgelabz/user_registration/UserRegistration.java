@@ -32,4 +32,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(mobileNumber);
         return matcher.matches();
     }
+    //UC5 - Rule1: minimum 8 characters
+    public boolean password(String password) {
+        String regex = "^[a-z]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }

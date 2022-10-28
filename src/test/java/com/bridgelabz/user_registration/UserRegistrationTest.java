@@ -56,4 +56,16 @@ class UserRegistrationTest {
         boolean result = userRegistration.mobileNumber("9919819801");
         Assertions.assertEquals(false, result);
     }
+    //UC5 - Rule1: minimum 8 characters
+    @Test
+    public void givenPassword_WhenValid_ShouldReturnTrue() {
+        boolean result = userRegistration.password("mutallib");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPassword_WhenInvalid_ShouldReturnFalse() {
+        boolean result = userRegistration.password("mu");
+        Assertions.assertEquals(false, result);
+    }
 }
