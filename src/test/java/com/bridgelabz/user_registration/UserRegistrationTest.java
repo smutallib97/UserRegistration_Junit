@@ -68,4 +68,16 @@ class UserRegistrationTest {
         boolean result = userRegistration.password("mu");
         Assertions.assertEquals(false, result);
     }
+    //UC6 - Rule2: should have at least one upper case
+    @Test
+    public void givenPasswordRule2_WhenValid_ShouldReturnTrue() {
+        boolean result = userRegistration.password2("Mutallib");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordRule2_WhenInvalid_ShouldReturnFalse() {
+        boolean result = userRegistration.password2("mutallib");
+        Assertions.assertEquals(false, result);
+    }
 }

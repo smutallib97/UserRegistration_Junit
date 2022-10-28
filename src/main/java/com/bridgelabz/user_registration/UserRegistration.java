@@ -39,4 +39,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+    //UC6 - Rule2: should have at least one upper case
+    public boolean password2(String password) {
+        String regex = "^[a-z](?=.*[A-Z]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }
