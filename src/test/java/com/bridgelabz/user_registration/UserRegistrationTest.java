@@ -32,4 +32,16 @@ class UserRegistrationTest {
         boolean result = userRegistration.lastName("mutallib");
         Assertions.assertEquals(false, result);
     }
+    //UC3 - Enter Valid User email
+    @Test
+    public void givenEmail_WhenValid_ShouldReturnTrue() {
+        boolean result = userRegistration.email("abc.xyz@bl.co.in");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenEmail_WhenInvalid_ShouldReturnFalse() {
+        boolean result = userRegistration.email("abc.xyz.in");
+        Assertions.assertEquals(false, result);
+    }
 }
