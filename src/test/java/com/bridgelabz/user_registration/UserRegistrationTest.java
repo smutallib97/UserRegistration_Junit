@@ -44,4 +44,16 @@ class UserRegistrationTest {
         boolean result = userRegistration.email("abc.xyz.in");
         Assertions.assertEquals(false, result);
     }
+    //UC4 - Enter Valid User Mobile Number
+    @Test
+    public void givenMobileNumber_WhenValid_ShouldReturnTrue() {
+        boolean result = userRegistration.mobileNumber("91 9919819801");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenInvalid_ShouldReturnFalse() {
+        boolean result = userRegistration.mobileNumber("9919819801");
+        Assertions.assertEquals(false, result);
+    }
 }

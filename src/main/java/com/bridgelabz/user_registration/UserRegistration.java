@@ -25,4 +25,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+    //UC4 - Enter Valid User Mobile Number
+    public boolean mobileNumber(String mobileNumber) {
+        String regex = "^[91]+[ ]?[6-9]{1}[0-9]{9}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobileNumber);
+        return matcher.matches();
+    }
 }
