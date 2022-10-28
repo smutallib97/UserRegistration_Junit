@@ -46,4 +46,11 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+    //UC7 - Rule3: should have at least one numeric number in the password
+    public boolean password3(String password) {
+        String regex = "^[a-z](?=.*[A-Z]+)(?=.*[0-9]+).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }

@@ -71,7 +71,7 @@ class UserRegistrationTest {
     //UC6 - Rule2: should have at least one upper case
     @Test
     public void givenPasswordRule2_WhenValid_ShouldReturnTrue() {
-        boolean result = userRegistration.password2("Mutallib");
+        boolean result = userRegistration.password2("mutaLLib9");
         Assertions.assertEquals(true, result);
     }
 
@@ -80,4 +80,18 @@ class UserRegistrationTest {
         boolean result = userRegistration.password2("mutallib");
         Assertions.assertEquals(false, result);
     }
+    //UC7 - Rule3: should have at least one numeric number in the password
+
+    @Test
+    public void givenPasswordRule3_WhenValid_ShouldReturnTrue() {
+        boolean result = userRegistration.password3("mutaLLib9");
+        Assertions.assertEquals(true, result);
+    }
+
+    @Test
+    public void givenPasswordRule3_WhenInvalid_ShouldReturnFalse() {
+        boolean result = userRegistration.password3("mutallib");
+        Assertions.assertEquals(false, result);
+    }
+
 }
